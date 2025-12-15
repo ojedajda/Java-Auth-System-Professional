@@ -1,30 +1,73 @@
-# Java-Auth-System-Professional
+🛡️ Sistema de Autenticación y Control de Acceso (RBAC)
+Este proyecto es una solución robusta de gestión de identidades desarrollada en Java Web, implementando un modelo de Control de Acceso Basado en Roles (RBAC) y siguiendo el patrón de diseño MVC.
 
-# 🛡️ Sistema de Autenticación y Control de Acceso (RBAC)
 
-Sistema robusto de gestión de usuarios y seguridad desarrollado en **Java Web**, siguiendo el patrón de diseño **MVC** y gestionado con **Maven**.
 
-## 🚀 Características Técnicas
-* [cite_start]**Seguridad:** Cifrado de contraseñas con algoritmos **SHA-256/MD5** para proteger los datos sensibles[cite: 4, 13, 48].
-* [cite_start]**Control de Acceso por Roles (RBAC):** Implementación de roles jerárquicos (**Administrador, Coordinador, Docente**) que determinan los permisos y vistas dentro del sistema[cite: 5, 25, 29, 37].
-* [cite_start]**Gestión de Sesiones:** Control seguro mediante `HttpSession` y validación de cierre de sesión[cite: 20, 33, 34].
-* [cite_start]**Protección de Rutas:** Uso de **Filtros (Java Filters)** para impedir el acceso no autorizado a páginas protegidas[cite: 35, 36].
-* [cite_start]**Auditoría:** Registro detallado de accesos incluyendo fecha, hora y dirección IP[cite: 38, 39].
 
-## 🛠️ Stack Tecnológico
-* [cite_start]**Backend:** Java EE (Servlets y JSP)[cite: 4, 41].
-* [cite_start]**Servidor:** Apache Tomcat 9.0[cite: 43].
-* [cite_start]**Base de Datos:** MySQL con diseño relacional muchos a muchos[cite: 6, 44].
-* [cite_start]**Frontend:** Interfaces responsivas con **Bootstrap 5**[cite: 47].
+🚀 Requerimientos Funcionales
 
-## 📊 Arquitectura de Base de Datos
-El sistema utiliza una estructura de tablas relacionales para gestionar usuarios, roles y auditorías de forma eficiente.
+Registro de Usuarios: Permite el registro de nuevos usuarios con validación de correo único.
 
-![Diagrama de la base de datos](Diagrama%20de%20la%20base%20de%20datos.png)
 
-## 📁 Estructura del Proyecto
-El proyecto está organizado siguiendo estándares profesionales:
-* `dao/`: Lógica de acceso a datos (consultas SQL seguras).
-* `servlets/`: Controladores de la aplicación.
-* `filtros/`: Capa de seguridad y protección de rutas.
-* `modelos/`: Representación de las entidades del sistema.
+
+
+Seguridad de Datos: Las contraseñas se almacenan encriptadas en la base de datos utilizando algoritmos SHA-256 o MD5.
+
+
+
+Autenticación Segura: Sistema de inicio de sesión con verificación contra base de datos y manejo de HttpSession.
+
+
+
+Control de Roles: Implementación de roles (Administrador, Coordinador, Docente) que determinan el acceso a secciones específicas del sistema.
+
+
+
+
+Protección de Rutas: Uso de Filtros (Java Filter) para impedir el acceso no autorizado a páginas protegidas.
+
+
+Gestión de Sesiones: Funcionalidad de cierre de sesión con invalidación de sesión y redirección segura.
+
+
+
+Auditoría: Registro de accesos incluyendo fecha, hora y dirección IP del usuario.
+
+🛠️ Stack Tecnológico
+
+Lenguaje: Java Web (Servlets y JSP).
+
+
+
+
+Gestor de Proyectos: Apache Maven.
+
+
+
+
+Servidor de Aplicaciones: Apache Tomcat 9.0.
+
+
+
+Base de Datos: MySQL con modelo relacional muchos a muchos.
+
+
+
+Interfaz de Usuario: Diseño responsivo con Bootstrap 5.
+
+📊 Arquitectura de Base de Datos
+El sistema utiliza tres tablas principales (usuarios, roles y usuariosRoles) para permitir una relación flexible de muchos a muchos.
+
+📁 Estructura del Código
+
+dao/: Implementación del patrón Data Access Object para consultas SQL seguras.
+
+
+filtros/: Capa de seguridad para el control de acceso y protección de vistas.
+
+
+servlets/: Controladores encargados de la lógica de navegación y autenticación.
+
+
+
+modelos/: Entidades que representan los datos del sistema bajo buenas prácticas de POO.
